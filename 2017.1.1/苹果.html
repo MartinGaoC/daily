@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function Apple(char, top, left) {
+           this.char = char;
+           this.top = top;
+           this.left = left;
+           this.dom = null;
+           this.timer = 0;
+           this.init = function () {
+               this.dom = document.createElement('div');
+               this.dom.style.left = this.left + 'px';
+               this.dom.style.top = this.top + 'px';
+               this.dom.innerText = this.char;
+               document.body.appendChild(this.dom)
+           }
+           this.down = function () {
+               var self = this;
+               this.timer = setInterval(function() {
+                   self.top += 3;
+
+                   self.dom.style.top = self.top + 'px'
+               },30)
+           }
+       }
+       function Game () {
+           this.timer = 0;
+           this.score = 0;
+           this.scoreDom = null;
+           this.level = 1;
+           this,chars = '';
+           this.apples = [];
+           this.init = function(){
+            //准备工作
+            this.dom = document.getElementById('score')
+            // 生成苹果的字符范围
+            for (var i = 0; i < 26; i++) {
+                this.chars.push(String.fromCharCode(65+i));
+            }
+           }
+           this.end = function() {
+                clearInterval(this.timer);
+                alert('您的分数是：' + this.score);
+           }
+           this.getScore = function () {
+
+           }
+           this.bindEvent = function() {
+                document.body.onkeydown = function(event) {
+                    event = event || window.event;
+                    //苹果消失
+                    self.dieApple(event.key, true)
+                }
+           }
+           this.createApple = function() {
+                var self = this;
+                this.timer = setInterval(function(){
+                    var char = self.chars[ parseInt(Math.random()*self.chars.length) ]
+                    var top = 0;
+                    var clientWidth = document.documentElement.clientWidth || document.body.clientWidth; 
+                    var left = Math.random()*clientWidth - 20;
+                    var apple = new Apple(char, top, left);
+                    self.apples.push(apple);
+                },500);
+           }
+           this.dieApple = function(char, hit) {//字符，是否打中
+                for ( var i =0; i < this.apples.length; i++) {
+                    if (char === this.apples[i],char) {
+                        this.apples[i].die();
+                        if (hit) {
+                            this.addScore()
+                        }
+                        this.apples.splice(i, 1);
+                        break;
+                    }
+                }
+           }
+           this.addScore = function () {
+               this.score ++;
+               this.scoreDom.innerText = this.score;
+           }
+       } 
+
+    </script>
+</body>
+</html>
