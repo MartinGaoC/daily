@@ -110,7 +110,60 @@ if ($file_handle){
     }
 }
 fclose($file_handle); // 关闭文件
- ?>  
+ ?> 
+ <P>
+ 请选择出生年份：
+ <select name="" id="">
+  <?php  
+    for($i = 1930; $i <= 2016; $i++) {
+  ?>
+     <option value=""><?php echo $i; ?></option> 
+   <?php  
+    }
+    ?>
+ </select>
+ </P>
+ <?php
+  echo "<select>";
+  for ($i = 1997; $i < 2017; $i++) {
+    echo '<option>';
+    echo $i;
+    echo '</option>';
+  } 
+  echo "</select>";
+ ?>
+
+ <?php
+  $web1704_changquery = 14;
+  function showChangQuery() {
+    global $web1704_changquery;   //global  关键字  引入变量
+    echo $web1704_changquery;
+  }
+  showChangQuery();
+  echo "<br />";
+  echo 3 + 8 * 5 /2 % 8;
+  echo "<br />";
+  echo 3 . "8" * 2;
+  echo "<br />";
+  echo 3 . "8" + 2;
+  echo "<br />";
+  $age = 17;
+  $newage = $age++ + ++$age + $age;
+  echo $newage; // 17 + 19 + 19;
+
+
+  //数组
+  $classes = array('1', '2', '3', '4');
+  var_dump($classes);
+  echo "<pre>";
+  print_r( $classes );
+  echo "</pre>";
+  echo count ($classes);
+
+  for ($i = 0; $i < count($classes); $i++){
+    echo "<li>$i</li>";
+  }
+ ?>
 </body>
 </html>
 

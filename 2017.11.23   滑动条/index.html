@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    section{
+        width: 100%;
+        margin: 0 auto;
+    }
+    div{
+      position: relative;
+      width: 75%;
+      margin: 0 auto;
+    }
+    span{
+        position: absolute;
+        left: 133px;
+        width: 60px;
+        height: 4px;
+        background:  darkcyan;
+    }
+    ul{
+        list-style: none;
+        margin-top: 20%;
+        overflow: hidden;
+    }
+    li{
+        float: left;
+        width: 60px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        box-sizing: border-box;
+    }
+    a{
+        display: inline-block;
+        text-decoration: none;
+    }
+    .current{
+        /* border-top: 4px solid darkcyan;
+        box-sizing: border-box; */
+        line-height: 36px;
+    }
+</style>
+<body>
+    <section>
+        <div class="">
+            <span class="sliderbar"></span>
+            <ul id="Abox">
+                <li class="current"><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+                <li><a href="">6</a></li>
+                <li><a href="">7</a></li>
+                <li><a href="">8</a></li>
+            </ul>
+        </div>   
+    </section>
+</body>
+<script src="jquery.js"></script>
+<script>
+    $(function() {
+        var currentNum = $('#Abox li').filter('.current').index();
+
+        $('.sliderbar').stop().animate({
+            left: Number(60 * currentNum ) + 'px'
+        })
+        $('#Abox li').hover(function() {
+            var num = $(this).index();
+            $('.sliderbar').stop().animate({
+                left: Number(60 * num ) + 'px'
+            })
+        }), function() {
+            $('.sliderbar').stop().animate({
+                left: Number(60 * currentNum ) + 'px'
+            })
+        }
+    })
+</script>
+</html>
