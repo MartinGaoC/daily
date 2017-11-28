@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            width: 320px;
+            background: #cccccc;
+        }
+        .main-child{
+            display: inline-block;
+            position: relative;
+            margin-right: 20px;
+        }
+        .main-child:nth-last-child(1){
+            margin-right: 0;
+        }
+        .main-child span{
+            font-size: 16px;
+            color: darkorange;
+            position: absolute;
+            top: 0; 
+        }
+        .ball{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            background: skyblue;
+            margin-top: 11px; 
+            margin-left: 11px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="main-child">
+            <span>阅</span>
+            <div class="ball">1</div>
+        </div>
+        <div class="main-child">
+            <span>阅</span>
+            <div class="ball">1</div>
+        </div>
+        <div class="main-child">
+            <span>阅</span>
+            <div class="ball">1</div>
+        </div>
+        <div class="main-child">
+            <span>阅</span>
+            <div class="ball">1</div>
+        </div>
+    </div>
+</body>
+</html>
