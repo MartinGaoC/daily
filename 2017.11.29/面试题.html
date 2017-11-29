@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     *{
+         margin: 0;
+         padding: 0;
+     }
+    
+    </style>
+</head>
+<body>
+    <div>
+        <h5>前端需要注意哪些SEO</h5>
+        <p>
+            合理的title
+        </p>
+        <p>
+            语义化的HTML代码  比如  section
+        </p>
+        <p>
+            重要内容的HTML代码放在前边
+        </p>
+        <p>
+            重要内容尽量不要用JS输出
+        </p>
+        <p> 
+            少用iframe
+        </p>
+        <p>
+            非装饰性图片必须用alt
+        </p>
+        <h5>HTTP的几种请求方法用途</h5>
+        <p>GET方法，发送一个请求来取得服务器上的某一资源</p>
+        <p>POST方法 向URL指定的资源提交数据或附加新的数据</p>
+        <p>PUT方法，和POST方法很像，也是向服务器提供数据，PUT方法指定了服务器上的位置</p>
+        <p>head方法只请求页面的首部</p>
+        <h5>从浏览器地址栏输入url到显示页面的步骤</h5>
+        <p>浏览器根据请求的URL交给DNS域名解析，找到真实IP，向服务器发起请求；</p>
+        <p>服务器交给后台处理完成后返回数据，浏览器接收文件（HTML,JS,CSS）</p>
+        <p>浏览器对加载的资源进行语法解析，建立相应的内部数据结构</p>
+        <p>载入解析倒得资源文件，渲染页面，完成。</p>
+        <h5>如何进行网站性能优化</h5>
+        <p>content方面   减少HTTP请求，合并文件，减少DNS查询，减少DOM数量</p>
+        <p>server方面  使用CDN  配置ETag</p>
+        <p>cookie方面  减少cookie大小</p>
+        <p>css 方面  样式放到页面顶部  不使用css表达式，使用 link 引入 不使用@import</p>
+        <p>JS方面  将脚本放到页面底部  将JS和CSS从外部引入  压缩JS和CSS 删除不需要的脚本 见到DOM访问</p>
+        <p>图片方面 优化图片  根据实际颜色需要选择色深，压缩</p>
+        <p>优化CSS 精灵图</p>
+        <p>不在在HTML中拉伸图片</p>
+        <h5>HTTP状态码及其含义</h5>
+        <p>1xx  信息状态码  100 继续 一般在发送post请求时，服务端返回表示确认</p>
+        <p>200  正常返回信息   201 请求成功并且服务器创建了新资源  202服务器已经接受请求但尚未处理</p>
+        <p>3xx重定向 301 请求的网页已永久移动到新位置  302 临时性重定向 303临时性重定向 且总是使用get</p>
+        <p>304 自从上次请求后，请求的网页未修改过</p>
+        <p>4xx客户端错误 400 服务器无法理解请求格式</p>
+        <p>401请求未授权  403禁止访问 404找不到与url匹配的资源</p>
+        <p>5xx服务器错误</p>
+        <p>500最常见的服务器端错误</p>
+        <p>503 服务器端暂时无法处理请求</p>
+        <h5>语义化的理解</h5>
+        <p>用正确的标签做正确的事情  让页面的内容结构化，便于浏览器、搜索引擎解析</p>
+        <h5>介绍一下你对浏览器内核的理解</h5>
+        <p>主要分成两个部分渲染引擎和JS引擎，渲染引擎负责取得网页的内容，JS引擎则解析和执行JS来实现网页的动态效果和交互效果</p>
+        <h5>HTML5 有哪些新特性、移除了那些元素</h5>
+        <p>会话canvas  用于媒介回放的video 和audio 元素 </p>
+        <p>本地离线存储localStorage 长期存储数据 浏览器关闭后数据不丢失</p>
+        <p>sessionStoage的数据在浏览器关闭后自动删除</p>
+        <p>语义化更好的元素 article  footer  header</p>
+        <p>表单控件calendar  data  time</p>
+        <p>新的技术  webworker</p>
+        <p>移除的元素：basefont big center font strike  </p>
+        <p>对可用性产生负面影响的元素: frame frameset</p>
+        <p>支持HTML5新标签</p>
+        <h5>HTML5的离线存储怎么使用，工作原理能不能解释一下</h5>
+        <p>在用户没有与因特网连接时，可以正常访问站点或应用，在用户与因特网连接的时候，更新用户机器杀那个的缓存文件</p>
+        <p>原理：HTML5的离线存储是基于一个新建的.appcache文件的缓存机制（不是存储技术），通过这个文件上的解析清单离线存储资源，这些资源就会像cookie一样被存储下来。之后当网络在处于离线状态时，浏览器会通过被离线存储的数据进行页面展示</p>
+        <p>如何使用： 页面头部像下面一样加入一个manifest的属性  在chche,manifest文件的编写离线存储的资源</p>
+        <p>在离线状态时，操作window.applicationCache进行需求实现</p>
+        <h5>描述一下cookie,sessionStorage和localSAtorage的区别</h5>
+        <p>cookie是网站为了标示用户身份而储存在用户本地终端上的数据，通常经过加密</p>
+        <p>cookie数据始终在同源的http请求中携带，即会咋浏览器和服务器来回传递</p>
+        <p>sessionStorage和localSAtorage不会自动把数据发给服务器，仅在本地保存</p>
+        <p>存储大小： cookie数据大小不能超过4k  sessionStorage和localSAtorage虽然也有存储大小的限制但是比cookie大的多，可以达到5M或更大</p>
+        <p>有效时间：localStorage存储持久数据，浏览器关闭后数据不丢失除非主动删除</p>
+        <p>sessionStorage数据在当前浏览器窗口关闭后自动删除</p>
+        <p>cokie设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭</p>
+        <h5>iframe有哪些缺点</h5>
+        <p>iframe会阻塞主页面的Onload事件</p>
+        <p>搜索引擎的检索程序无法解读这种页面，不利于SEO</p>
+        
+
+
+
+    </div>
+</body>
+</html>
